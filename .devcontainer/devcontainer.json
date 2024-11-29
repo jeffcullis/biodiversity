@@ -51,7 +51,14 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "R -q -e 'renv::install()'",
-	"postCreateCommand": "sudo apt update && sudo apt upgrade -y && sudo bash /rocker_scripts/install_jupyter.sh && echo 'source /opt/venv/bin/activate' >>/home/rstudio/.bashrc && . /opt/venv/bin/activate",
+	//	sudo apt update && \
+	//	sudo apt upgrade -y && \
+	//	sudo bash /rocker_scripts/install_jupyter.sh && \
+	"postCreateCommand": " \
+		echo 'source /opt/venv/bin/activate' >>/home/rstudio/.bashrc && \
+		source /opt/venv/bin/activate && \
+		git config --global user.name 'Jeff Cullis' && \
+ 		git config --global user.email 'jeffcullis@gmail.com'"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
