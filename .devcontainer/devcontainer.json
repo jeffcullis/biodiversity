@@ -55,10 +55,19 @@
 	//	sudo apt upgrade -y && \
 	//	sudo bash /rocker_scripts/install_jupyter.sh && \
 	"postCreateCommand": " \
+		sudo bash /rocker_scripts/install_jupyter.sh && \
 		echo 'source /opt/venv/bin/activate' >>/home/rstudio/.bashrc && \
-		source /opt/venv/bin/activate && \
 		git config --global user.name 'Jeff Cullis' && \
- 		git config --global user.email 'jeffcullis@gmail.com'"
+ 		git config --global user.email 'jeffcullis@gmail.com'",
+
+	"postAttachCommand": "echo Remember to run 'source /opt/venv/bin/activate'",
+
+    "vscode": {
+		"extensions": [
+		  "ms-toolsai.jupyter",
+		  "ms-python.python"
+		]
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
