@@ -17,9 +17,8 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": {
-		"apt_update": "sudo apt-get update",
-		"apt_upgrade": "sudo apt-get upgrade -y",
-		"jupyter": "sudo bash /rocker_scripts/install_jupyter.sh",
+		// "jupyter": "sudo bash /rocker_scripts/install_jupyter.sh",
+		"jupyter_phylo": "sudo bash ./.devcontainer/install_jupyter_phyloregion.sh",
 		"venv": "echo 'source /opt/venv/bin/activate' >>/home/rstudio/.bashrc",
 		"git_n": "git config --global user.name 'Jeff Cullis'",
 		"git_e": "git config --global user.email 'jeffcullis@gmail.com'",
